@@ -1,0 +1,21 @@
+{
+  "name": "agency",
+  "version": "1.0.0",
+  "description": "에이전시",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stella0526/agency.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/stella0526/agency/issues"
+  },
+  "homepage": "https://github.com/stella0526/agency#readme"
+}

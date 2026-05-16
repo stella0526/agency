@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>포트폴리오 | KHYE STUDIO - 웹에이전시</title>
+  <meta name="description" content="KHYE STUDIO 포트폴리오. 기업홈페이지, 쇼핑몰, 모바일앱, 랜딩페이지, 상세페이지 등 300개 이상의 실제 제작 사례를 확인하세요."/>
+  <meta name="keywords" content="웹에이전시포트폴리오,홈페이지제작사례,쇼핑몰제작포트폴리오,랜딩페이지디자인,상세페이지제작"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://khyestudio.com/portfolio.html"/>
+  <meta property="og:title" content="포트폴리오 | KHYE STUDIO"/>
+  <meta property="og:description" content="50개+ 실제 제작 사례. 기업홈페이지·쇼핑몰·앱·랜딩페이지·상세페이지"/>
+  <meta property="og:image" content="images/og-image.jpg"/>
+  <meta property="og:url" content="https://khyestudio.com/portfolio.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:#07070E; --bg2:#0F0F1A; --card:#13131F;
+      --gold:#C9A96E; --gold2:#E8C98A; --white:#F0EDE8;
+      --gray:#8A8A9A; --border:rgba(201,169,110,0.18);
+      --font-serif:'Noto Serif KR',serif; --font-sans:'Nanum Gothic',sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--white);font-family:var(--font-sans);overflow-x:hidden;line-height:1.7;}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;background:rgba(7,7,14,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+    .nav-logo{font-family:var(--font-serif);font-size:1.3rem;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:.06em;}
+    .nav-logo span{color:var(--white);}
+    .nav-links{display:flex;gap:2.2rem;list-style:none;}
+    .nav-links a{color:var(--gray);text-decoration:none;font-size:.875rem;letter-spacing:.04em;transition:color .2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold);}
+    .nav-cta{background:var(--gold);color:var(--bg)!important;padding:.45rem 1.2rem;border-radius:3px;font-weight:800;font-size:.82rem!important;}
+    .hamburger{display:none;cursor:pointer;flex-direction:column;gap:5px;}
+    .hamburger span{width:24px;height:2px;background:var(--white);}
+    .mobile-nav{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(7,7,14,.97);padding:1.5rem 5%;z-index:999;border-bottom:1px solid var(--border);}
+    .mobile-nav.open{display:block;}
+    .mobile-nav ul{list-style:none;}
+    .mobile-nav li{padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.05);}
+    .mobile-nav a{color:var(--white);text-decoration:none;font-size:1rem;}
+
+    /* HERO */
+    .page-hero{padding:8rem 7% 5rem;background:var(--bg2);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+    .page-hero::before{content:'PORTFOLIO';position:absolute;right:5%;top:50%;transform:translateY(-50%);font-family:var(--font-serif);font-size:10rem;font-weight:700;color:rgba(201,169,110,.04);white-space:nowrap;pointer-events:none;}
+    .section-tag{font-size:.78rem;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.8rem;display:block;}
+    .page-title{font-family:var(--font-serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--white);margin-bottom:.8rem;}
+    .page-desc{color:var(--gray);font-size:.98rem;max-width:520px;line-height:1.85;}
+
+    /* FILTER */
+    .filter-bar{padding:2.5rem 7%;display:flex;gap:.7rem;flex-wrap:wrap;border-bottom:1px solid var(--border);position:sticky;top:68px;z-index:100;background:rgba(7,7,14,.95);backdrop-filter:blur(10px);}
+    .filter-btn{background:transparent;border:1px solid var(--border);color:var(--gray);padding:.45rem 1.1rem;border-radius:20px;cursor:pointer;font-size:.82rem;font-family:var(--font-sans);transition:all .2s;letter-spacing:.03em;}
+    .filter-btn:hover,.filter-btn.active{background:var(--gold);border-color:var(--gold);color:var(--bg);font-weight:800;}
+
+    /* PORTFOLIO GRID */
+    .portfolio-section{padding:4rem 7%;}
+    .portfolio-count{color:var(--gray);font-size:.85rem;margin-bottom:2rem;}
+    .portfolio-count span{color:var(--gold);font-weight:800;}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+
+    .p-card{background:var(--card);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:transform .3s,border-color .3s;cursor:pointer;}
+    .p-card:hover{transform:translateY(-5px);border-color:var(--gold);}
+    .p-thumb{width:100%;aspect-ratio:16/10;background:linear-gradient(135deg,#1A1A2E,#16213E);position:relative;overflow:hidden;}
+    .p-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+    .p-card:hover .p-thumb img{transform:scale(1.05);}
+    .p-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:.72rem;color:rgba(138,138,154,.4);flex-direction:column;gap:.3rem;text-align:center;padding:.5rem;}
+    .p-placeholder .folder{font-size:1.4rem;}
+    .p-overlay{position:absolute;inset:0;background:rgba(7,7,14,.82);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;opacity:0;transition:opacity .3s;}
+    .p-card:hover .p-overlay{opacity:1;}
+    .p-apply-btn{background:var(--gold);color:var(--bg);padding:.5rem 1.1rem;border-radius:3px;font-size:.76rem;font-weight:800;text-decoration:none;border:none;cursor:pointer;font-family:var(--font-sans);transition:background .2s;}
+    .p-apply-btn:hover{background:var(--gold2);}
+    .p-detail-btn{background:transparent;color:var(--white);padding:.4rem 1rem;border-radius:3px;font-size:.73rem;text-decoration:none;border:1px solid rgba(255,255,255,.3);}
+    .p-info{padding:1rem 1.1rem;}
+    .p-cat{font-size:.7rem;color:var(--gold);letter-spacing:.07em;margin-bottom:.2rem;}
+    .p-name{color:var(--white);font-size:.88rem;font-weight:700;margin-bottom:.15rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .p-meta{color:var(--gray);font-size:.75rem;}
+    .p-price{display:inline-block;font-size:.73rem;color:var(--gold);border:1px solid rgba(201,169,110,.25);padding:.15rem .6rem;border-radius:2px;margin-top:.4rem;}
+
+    /* HIDDEN */
+    .p-card.hidden{display:none;}
+
+    /* CTA BANNER */
+    .cta-banner{background:linear-gradient(135deg,#0F0D1E,#1A1628);border:1px solid var(--border);border-radius:8px;padding:3.5rem;text-align:center;margin:2rem 7% 5rem;}
+    .cta-banner h3{font-family:var(--font-serif);font-size:1.8rem;color:var(--white);margin-bottom:.8rem;}
+    .cta-banner p{color:var(--gray);font-size:.95rem;margin-bottom:2rem;}
+    .btn-primary{background:var(--gold);color:var(--bg);padding:.9rem 2rem;border-radius:3px;text-decoration:none;font-weight:800;font-size:.92rem;border:none;cursor:pointer;}
+    .btn-primary:hover{background:var(--gold2);}
+    .btn-outline{background:transparent;color:var(--white);padding:.9rem 2rem;border-radius:3px;text-decoration:none;font-size:.92rem;border:1px solid var(--border);}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+
+    /* FOOTER */
+    footer{background:#050508;padding:3rem 7% 2rem;border-top:1px solid var(--border);}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;}
+    .footer-bottom p{color:rgba(138,138,154,.5);font-size:.78rem;}
+
+    /* MODAL */
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:2000;align-items:center;justify-content:center;padding:1rem;}
+    .modal-overlay.open{display:flex;}
+    .modal{background:var(--bg2);border:1px solid var(--border);border-radius:8px;max-width:600px;width:100%;padding:2.5rem;position:relative;max-height:90vh;overflow-y:auto;}
+    .modal-close{position:absolute;top:1rem;right:1.2rem;background:none;border:none;color:var(--gray);font-size:1.5rem;cursor:pointer;}
+    .modal-img{width:100%;aspect-ratio:16/9;background:var(--card);border-radius:4px;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.85rem;}
+    .modal-cat{font-size:.75rem;color:var(--gold);letter-spacing:.1em;margin-bottom:.4rem;}
+    .modal-title{font-family:var(--font-serif);font-size:1.5rem;color:var(--white);margin-bottom:.6rem;}
+    .modal-desc{color:var(--gray);font-size:.88rem;line-height:1.8;margin-bottom:1.5rem;}
+    .modal-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+    .tag{background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.2);color:var(--gold);font-size:.74rem;padding:.2rem .7rem;border-radius:2px;}
+    .modal-btns{display:flex;gap:.8rem;}
+
+    @media(max-width:1024px){.portfolio-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:768px){
+      .nav-links{display:none;} .hamburger{display:flex;}
+      .portfolio-grid{grid-template-columns:repeat(2,1fr);}
+      .filter-bar{top:68px;gap:.4rem;}
+      .cta-banner{padding:2rem 1.5rem;}
+      .modal{padding:1.5rem;}
+    }
+    @media(max-width:480px){.portfolio-grid{grid-template-columns:1fr;}}
+
+    .fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">KHYE<span> STUDIO</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">소개</a></li>
+    <li><a href="index.html#services">서비스</a></li>
+    <li><a href="portfolio.html" class="active">포트폴리오</a></li>
+    <li><a href="index.html#pricing">가격안내</a></li>
+    <li><a href="index.html#reviews">후기</a></li>
+    <li><a href="apply.html" class="nav-cta">무료 상담 신청</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="index.html#about" onclick="toggleMenu()">소개</a></li>
+    <li><a href="index.html#services" onclick="toggleMenu()">서비스</a></li>
+    <li><a href="portfolio.html">포트폴리오</a></li>
+    <li><a href="index.html#pricing" onclick="toggleMenu()">가격안내</a></li>
+    <li><a href="apply.html">무료 상담 신청</a></li>
+  </ul>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <span class="section-tag">Portfolio</span>
+  <h1 class="page-title">제작 포트폴리오</h1>
+  <p class="page-desc">2018년부터 완성한 300여 개 프로젝트 중<br/>대표 작품 50선을 소개합니다. 원하는 스타일을 찾아보세요.</p>
+</div>
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <button class="filter-btn active" data-cat="all">전체 (50)</button>
+  <button class="filter-btn" data-cat="쇼핑몰">쇼핑몰 (10)</button>
+  <button class="filter-btn" data-cat="기업홈페이지">기업홈페이지 (10)</button>
+  <button class="filter-btn" data-cat="랜딩페이지">랜딩페이지 (10)</button>
+  <button class="filter-btn" data-cat="모바일앱">모바일앱 UI (8)</button>
+  <button class="filter-btn" data-cat="상세페이지">상세페이지 (7)</button>
+  <button class="filter-btn" data-cat="패키지">패키지·인쇄물 (5)</button>
+</div>
+
+<!-- GRID -->
+<div class="portfolio-section">
+  <p class="portfolio-count">총 <span id="countDisplay">50</span>개 작품</p>
+  <div class="portfolio-grid" id="portfolioGrid">
+
+    <!-- ══ 쇼핑몰 10개 ══ -->
+    <!-- portfolio-01.jpg -->
+    <div class="p-card fade-up" data-cat="쇼핑몰" data-id="01" data-name="뷰티 브랜드 자사몰" data-desc="화장품 브랜드의 프리미엄 이미지를 살린 자사몰. 메인배너 슬라이드, 카테고리별 상품 필터, 찜하기 기능, 카카오페이 연동 결제 구현." data-tags="Cafe24,반응형,결제연동,쇼핑몰" data-price="1,500,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-01.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=01&name=뷰티+브랜드+자사몰">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">쇼핑몰</p>
+        <p class="p-name">뷰티 브랜드 자사몰</p>
+        <p class="p-meta">Cafe24 · 반응형 · 2024</p>
+        <span class="p-price">1,500,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-02.jpg -->
+    <div class="p-card fade-up" data-cat="쇼핑몰" data-id="02" data-name="패션 의류 쇼핑몰" data-desc="MZ 타깃 여성 의류 브랜드 쇼핑몰. 무한스크롤 상품목록, 사이즈 가이드 팝업, 재입고 알림, 적립금 시스템 구축." data-tags="Cafe24,패션,반응형,모바일최적화" data-price="1,800,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-02.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=02">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">쇼핑몰</p>
+        <p class="p-name">패션 의류 쇼핑몰</p>
+        <p class="p-meta">Cafe24 · 반응형 · 2024</p>
+        <span class="p-price">1,800,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-03.jpg -->
+    <div class="p-card fade-up" data-cat="쇼핑몰" data-id="03" data-name="프리미엄 가구 쇼핑몰" data-desc="고급 가구 브랜드 온라인 쇼룸. 3D 뷰어 연동, AR 미리보기, 맞춤 제작 견적 신청 시스템, 고객 인테리어 갤러리." data-tags="커스텀개발,3D연동,프리미엄" data-price="3,000,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-03.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=03">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">쇼핑몰</p>
+        <p class="p-name">프리미엄 가구 쇼핑몰</p>
+        <p class="p-meta">커스텀개발 · 2023</p>
+        <span class="p-price">3,000,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-04.jpg -->
+    <div class="p-card fade-up" data-cat="쇼핑몰" data-id="04" data-name="반려동물 용품몰" data-desc="펫 라이프스타일 브랜드 쇼핑몰. 품종별 상품 추천, 정기구독 결제, 반려동물 프로필 등록 기능, SNS 사진 갤러리 연동." data-tags="Cafe24,정기구독,반응형" data-price="2,000,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-04.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=04">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">쇼핑몰</p>
+        <p class="p-name">반려동물 용품몰</p>
+        <p class="p-meta">Cafe24 · 반응형 · 2024</p>
+        <span class="p-price">2,000,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-05.jpg -->
+    <div class="p-card fade-up" data-cat="쇼핑몰" data-id="05" data-name="건강기능식품 쇼핑몰" data-desc="건강식품 전문 쇼핑몰. 성분 분석 페이지, 복용 가이드, 의사 추천 코너, 정기구독 및 첫구매 할인 자동화." data-tags="쇼핑몰,건강,정기구독,Cafe24" data-price="2,200,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-05.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=05">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">쇼핑몰</p>
+        <p class="p-name">건강기능식품 쇼핑몰</p>
+        <p class="p-meta">Cafe24 · 반응형 · 2023</p>
+        <span class="p-price">2,200,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-06.jpg -->
+    <div class="p-card fade-up" data-cat="쇼핑몰" data-id="06" data-name="아동복 전문몰" data-desc="키즈 의류 브랜드 쇼핑몰. 연령별 사이즈 필터, 성장기록 기반 추천, 위시리스트, 포인트 적립 시스템." data-tags="아동복,Cafe24,반응형" data-price="1,600,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-06.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=06">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">쇼핑몰</p>
+        <p class="p-name">아동복 전문몰</p>
+        <p class="p-meta">Cafe24 · 반응형 · 2024</p>
+        <span class="p-price">1,600,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-07.jpg -->
+    <div class="p-card fade-up" data-cat="쇼핑몰" data-id="07" data-name="수제 디저트 쇼핑몰" data-desc="프리미엄 베이커리 브랜드 쇼핑몰. 날짜 지정 배송, 메시지카드 커스터마이징, 선물 포장 옵션, 카카오 선물하기 연동." data-tags="식품,카카오선물,반응형" data-price="1,700,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-07.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=07">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">쇼핑몰</p>
+        <p class="p-name">수제 디저트 쇼핑몰</p>
+        <p class="p-meta">Cafe24 · 반응형 · 2023</p>
+        <span class="p-price">1,700,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-08.jpg -->
+    <div class="p-card fade-up" data-cat="쇼핑몰" data-id="08" data-name="스포츠용품 쇼핑몰" data-desc="아웃도어·스포츠 전문몰. 브랜드별·종목별 카테고리, 장비 비교 기능, 사용기 리뷰, 포인트 마일리지 시스템." data-tags="스포츠,비교기능,반응형" data-price="2,000,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-08.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=08">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">쇼핑몰</p>
+        <p class="p-name">스포츠용품 쇼핑몰</p>
+        <p class="p-meta">커스텀 · 반응형 · 2023</p>
+        <span class="p-price">2,000,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-09.jpg -->
+    <div class="p-card fade-up" data-cat="쇼핑몰" data-id="09" data-name="인테리어 소품몰" data-desc="북유럽 감성 인테리어 소품 쇼핑몰. 코디 추천 세트, 인테리어 스타일별 큐레이션, 무드보드 기능." data-tags="Cafe24,인테리어,큐레이션" data-price="1,900,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-09.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=09">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">쇼핑몰</p>
+        <p class="p-name">인테리어 소품몰</p>
+        <p class="p-meta">Cafe24 · 반응형 · 2024</p>
+        <span class="p-price">1,900,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-10.jpg -->
+    <div class="p-card fade-up" data-cat="쇼핑몰" data-id="10" data-name="명품 셀렉트샵" data-desc="럭셔리 편집샵 온라인몰. 정품 인증 배지, VIP 전용 라운지, 한정판 선공개, 프리오더 시스템." data-tags="프리미엄,한정판,VIP,커스텀" data-price="3,500,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-10.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=10">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">쇼핑몰</p>
+        <p class="p-name">명품 셀렉트샵</p>
+        <p class="p-meta">커스텀개발 · 2023</p>
+        <span class="p-price">3,500,000원~</span>
+      </div>
+    </div>
+
+    <!-- ══ 기업홈페이지 10개 ══ -->
+    <!-- portfolio-11.jpg -->
+    <div class="p-card fade-up" data-cat="기업홈페이지" data-id="11" data-name="IT 솔루션 기업 사이트" data-desc="B2B IT 솔루션 기업 홈페이지. 서비스 소개, 고객사 로고 슬라이더, 채용 공고, 솔루션 데모 신청 폼." data-tags="WordPress,반응형,B2B,SEO" data-price="1,200,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-11.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=11">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">기업홈페이지</p>
+        <p class="p-name">IT 솔루션 기업 사이트</p>
+        <p class="p-meta">WordPress · 반응형 · 2024</p>
+        <span class="p-price">1,200,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-12.jpg -->
+    <div class="p-card fade-up" data-cat="기업홈페이지" data-id="12" data-name="건설·인테리어 회사" data-desc="종합건설 기업 홈페이지. 시공 포트폴리오 갤러리, 공사 현황판, 자재 카탈로그, 무료 견적 신청." data-tags="반응형,갤러리,HTML/CSS" data-price="1,000,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-12.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=12">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">기업홈페이지</p>
+        <p class="p-name">건설·인테리어 회사</p>
+        <p class="p-meta">HTML/CSS · 반응형 · 2024</p>
+        <span class="p-price">1,000,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-13.jpg -->
+    <div class="p-card fade-up" data-cat="기업홈페이지" data-id="13" data-name="병원·클리닉 홈페이지" data-desc="피부과 전문 클리닉 사이트. 시술 전후 사진, 온라인 예약 시스템, 의료진 프로필, 이벤트 팝업." data-tags="병원,예약시스템,반응형" data-price="1,500,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-13.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=13">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">기업홈페이지</p>
+        <p class="p-name">병원·클리닉 홈페이지</p>
+        <p class="p-meta">WordPress · 예약연동 · 2023</p>
+        <span class="p-price">1,500,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-14.jpg -->
+    <div class="p-card fade-up" data-cat="기업홈페이지" data-id="14" data-name="법무법인 홈페이지" data-desc="변호사 법인 공식 홈페이지. 전문 분야별 서비스, 판례·법률정보 블로그, 무료 법률 상담 신청, 온라인 계약." data-tags="법률,신뢰감,반응형,SEO" data-price="1,200,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-14.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=14">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">기업홈페이지</p>
+        <p class="p-name">법무법인 홈페이지</p>
+        <p class="p-meta">WordPress · 반응형 · 2024</p>
+        <span class="p-price">1,200,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-15.jpg -->
+    <div class="p-card fade-up" data-cat="기업홈페이지" data-id="15" data-name="교육기관·학원 사이트" data-desc="어학원 공식 홈페이지. 수업 시간표, 온라인 레벨테스트, 강사 프로필, 수강 신청, 후기 갤러리." data-tags="교육,수강신청,반응형" data-price="900,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-15.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=15">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">기업홈페이지</p>
+        <p class="p-name">교육기관·학원 사이트</p>
+        <p class="p-meta">HTML/CSS · 반응형 · 2024</p>
+        <span class="p-price">900,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-16.jpg -->
+    <div class="p-card fade-up" data-cat="기업홈페이지" data-id="16" data-name="제조·물류 기업" data-desc="중견 제조업체 기업 홈페이지. 제품 카탈로그, 공장 스마트 투어, B2B 거래처 등록, 실시간 견적 계산기." data-tags="B2B,제조,견적계산기" data-price="1,300,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-16.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=16">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">기업홈페이지</p>
+        <p class="p-name">제조·물류 기업</p>
+        <p class="p-meta">WordPress · 반응형 · 2023</p>
+        <span class="p-price">1,300,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-17.jpg -->
+    <div class="p-card fade-up" data-cat="기업홈페이지" data-id="17" data-name="부동산 공인중개사" data-desc="부동산 중개 법인 홈페이지. 매물 DB 연동, 지도 기반 매물 검색, 온라인 방문 예약, AI 시세 조회." data-tags="부동산,지도연동,DB" data-price="1,800,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-17.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=17">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">기업홈페이지</p>
+        <p class="p-name">부동산 공인중개사</p>
+        <p class="p-meta">커스텀 · 지도연동 · 2023</p>
+        <span class="p-price">1,800,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-18.jpg -->
+    <div class="p-card fade-up" data-cat="기업홈페이지" data-id="18" data-name="회계·세무법인" data-desc="세무회계 전문 기업 사이트. 서비스 안내, 세금 계산기, 세무 뉴스 블로그, 온라인 상담 예약." data-tags="세무,계산기,반응형" data-price="900,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-18.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=18">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">기업홈페이지</p>
+        <p class="p-name">회계·세무법인</p>
+        <p class="p-meta">WordPress · 반응형 · 2024</p>
+        <span class="p-price">900,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-19.jpg -->
+    <div class="p-card fade-up" data-cat="기업홈페이지" data-id="19" data-name="식음료 프랜차이즈" data-desc="카페 프랜차이즈 본사 사이트. 브랜드 스토리, 메뉴 소개, 가맹점 창업 안내, 지점 찾기, 본사 채용." data-tags="F&B,프랜차이즈,지점찾기" data-price="1,400,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-19.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=19">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">기업홈페이지</p>
+        <p class="p-name">식음료 프랜차이즈</p>
+        <p class="p-meta">WordPress · 반응형 · 2024</p>
+        <span class="p-price">1,400,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-20.jpg -->
+    <div class="p-card fade-up" data-cat="기업홈페이지" data-id="20" data-name="NGO·비영리단체" data-desc="환경 NGO 공식 사이트. 활동 보고서, 후원 결제 시스템, 봉사자 모집, 이슈 트래커 대시보드." data-tags="비영리,후원,반응형" data-price="850,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-20.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=20">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">기업홈페이지</p>
+        <p class="p-name">NGO·비영리단체</p>
+        <p class="p-meta">WordPress · 후원연동 · 2023</p>
+        <span class="p-price">850,000원~</span>
+      </div>
+    </div>
+
+    <!-- ══ 랜딩페이지 10개 ══ -->
+    <!-- portfolio-21.jpg -->
+    <div class="p-card fade-up" data-cat="랜딩페이지" data-id="21" data-name="SaaS 제품 런칭 페이지" data-desc="B2B SaaS 무료체험 전환 랜딩. 히어로 영상, 기능 비교 테이블, 고객 추천사, 14일 무료체험 CTA." data-tags="SaaS,전환율,B2B,랜딩" data-price="500,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-21.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=21">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">랜딩페이지</p>
+        <p class="p-name">SaaS 제품 런칭 페이지</p>
+        <p class="p-meta">HTML/CSS/JS · 2024</p>
+        <span class="p-price">500,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-22.jpg -->
+    <div class="p-card fade-up" data-cat="랜딩페이지" data-id="22" data-name="피트니스 센터 랜딩" data-desc="헬스장 신규 회원 모집 랜딩. 시설 소개 비디오, 트레이너 프로필, 수업 시간표, 첫달 무료 체험 신청." data-tags="피트니스,회원모집,반응형" data-price="380,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-22.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=22">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">랜딩페이지</p>
+        <p class="p-name">피트니스 센터 랜딩</p>
+        <p class="p-meta">HTML/CSS · 반응형 · 2024</p>
+        <span class="p-price">380,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-23.jpg -->
+    <div class="p-card fade-up" data-cat="랜딩페이지" data-id="23" data-name="온라인 강의 판매 페이지" data-desc="인플루언서 온라인 클래스 판매 랜딩. 커리큘럼 공개, 무료 맛보기 영상, 수강생 후기, 얼리버드 할인 타이머." data-tags="교육,강의,타이머,전환율" data-price="420,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-23.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=23">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">랜딩페이지</p>
+        <p class="p-name">온라인 강의 판매 페이지</p>
+        <p class="p-meta">HTML/JS · 반응형 · 2024</p>
+        <span class="p-price">420,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-24.jpg -->
+    <div class="p-card fade-up" data-cat="랜딩페이지" data-id="24" data-name="부동산 분양 안내 페이지" data-desc="신규 아파트 분양 홍보 랜딩. 단지 조감도, 평면도 뷰어, 분양가 계산기, 견본주택 방문 예약." data-tags="분양,부동산,계산기" data-price="600,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-24.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=24">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">랜딩페이지</p>
+        <p class="p-name">부동산 분양 안내 페이지</p>
+        <p class="p-meta">HTML/CSS · 반응형 · 2023</p>
+        <span class="p-price">600,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-25.jpg -->
+    <div class="p-card fade-up" data-cat="랜딩페이지" data-id="25" data-name="앱 출시 프리오더 페이지" data-desc="신규 앱 사전예약 랜딩. 앱 기능 소개 애니메이션, 카운트다운 타이머, 사전예약 인센티브, 앱스토어 연동." data-tags="앱,사전예약,타이머" data-price="450,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-25.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=25">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">랜딩페이지</p>
+        <p class="p-name">앱 출시 프리오더 페이지</p>
+        <p class="p-meta">HTML/JS · 반응형 · 2024</p>
+        <span class="p-price">450,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-26.jpg -->
+    <div class="p-card fade-up" data-cat="랜딩페이지" data-id="26" data-name="식품 신제품 출시 랜딩" data-desc="건강음료 신제품 출시 홍보 페이지. 성분 애니메이션, 전·후 비교, 한정 수량 배너, SNS 공유 이벤트." data-tags="식품,신제품,이벤트" data-price="380,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-26.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=26">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">랜딩페이지</p>
+        <p class="p-name">식품 신제품 출시 랜딩</p>
+        <p class="p-meta">HTML/CSS · 반응형 · 2024</p>
+        <span class="p-price">380,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-27.jpg -->
+    <div class="p-card fade-up" data-cat="랜딩페이지" data-id="27" data-name="이벤트·세미나 등록 페이지" data-desc="기업 컨퍼런스 참가자 모집 랜딩. 세션 일정표, 연사 프로필, 조기등록 혜택, 실시간 잔여석 카운터." data-tags="이벤트,세미나,등록" data-price="400,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-27.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=27">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">랜딩페이지</p>
+        <p class="p-name">이벤트·세미나 등록 페이지</p>
+        <p class="p-meta">HTML/JS · 반응형 · 2023</p>
+        <span class="p-price">400,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-28.jpg -->
+    <div class="p-card fade-up" data-cat="랜딩페이지" data-id="28" data-name="크라우드펀딩 소개 페이지" data-desc="스타트업 크라우드펀딩 캠페인 홍보 랜딩. 제품 스토리텔링, 후원 단계 안내, 목표 달성 프로그레스바." data-tags="크라우드펀딩,스토리텔링" data-price="500,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-28.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=28">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">랜딩페이지</p>
+        <p class="p-name">크라우드펀딩 소개 페이지</p>
+        <p class="p-meta">HTML/JS · 반응형 · 2024</p>
+        <span class="p-price">500,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-29.jpg -->
+    <div class="p-card fade-up" data-cat="랜딩페이지" data-id="29" data-name="웨딩홀 프로모션 페이지" data-desc="웨딩홀 패키지 프로모션 랜딩. 예식 영상, 홀 3D 투어, 패키지 비교, 날짜 예약 달력, 실시간 채팅." data-tags="웨딩,예약,3D투어" data-price="550,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-29.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=29">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">랜딩페이지</p>
+        <p class="p-name">웨딩홀 프로모션 페이지</p>
+        <p class="p-meta">HTML/CSS · 반응형 · 2023</p>
+        <span class="p-price">550,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-30.jpg -->
+    <div class="p-card fade-up" data-cat="랜딩페이지" data-id="30" data-name="보험 상담 신청 랜딩" data-desc="생명보험 상담 전환 랜딩. 보험료 계산기, 설계사 후기, 무료 상담 예약, 전화연결 CTA." data-tags="보험,전환율,계산기" data-price="400,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-30.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=30">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">랜딩페이지</p>
+        <p class="p-name">보험 상담 신청 랜딩</p>
+        <p class="p-meta">HTML/JS · 반응형 · 2024</p>
+        <span class="p-price">400,000원~</span>
+      </div>
+    </div>
+
+    <!-- ══ 모바일앱 8개 ══ -->
+    <!-- portfolio-31.jpg -->
+    <div class="p-card fade-up" data-cat="모바일앱" data-id="31" data-name="음식 배달 앱 UI/UX" data-desc="음식 배달 서비스 전체 앱 디자인. 온보딩, 식당 목록, 장바구니, 결제, 주문 트래킹 전 화면 Figma 납품." data-tags="Figma,iOS,Android,배달" data-price="2,500,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-31.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=31">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">모바일앱 UI</p>
+        <p class="p-name">음식 배달 앱 UI/UX</p>
+        <p class="p-meta">Figma · iOS/Android · 2024</p>
+        <span class="p-price">2,500,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-32.jpg -->
+    <div class="p-card fade-up" data-cat="모바일앱" data-id="32" data-name="헬스케어 트래킹 앱" data-desc="건강 데이터 모니터링 앱 UI. 대시보드, 운동 기록, 식단 입력, 수면 분석, 리포트 화면 전체 디자인." data-tags="헬스케어,Figma,대시보드" data-price="2,200,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-32.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=32">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">모바일앱 UI</p>
+        <p class="p-name">헬스케어 트래킹 앱</p>
+        <p class="p-meta">Figma · iOS · 2024</p>
+        <span class="p-price">2,200,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-33.jpg -->
+    <div class="p-card fade-up" data-cat="모바일앱" data-id="33" data-name="쇼핑 앱 UI 리뉴얼" data-desc="기존 쇼핑몰 앱 전면 리뉴얼. UX 리서치 기반 개편, 홈 피드, 상품 상세, 장바구니, 결제 플로우." data-tags="쇼핑앱,리뉴얼,UX리서치" data-price="3,000,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-33.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=33">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">모바일앱 UI</p>
+        <p class="p-name">쇼핑 앱 UI 리뉴얼</p>
+        <p class="p-meta">Figma · iOS/Android · 2023</p>
+        <span class="p-price">3,000,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-34.jpg -->
+    <div class="p-card fade-up" data-cat="모바일앱" data-id="34" data-name="부동산 정보 앱 UI" data-desc="아파트 시세·매물 정보 앱. 지도 뷰, 매물 카드, 관심 단지 등록, 알림 설정, 커뮤니티 화면." data-tags="부동산,지도UI,Figma" data-price="2,500,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-34.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=34">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">모바일앱 UI</p>
+        <p class="p-name">부동산 정보 앱 UI</p>
+        <p class="p-meta">Figma · Android · 2023</p>
+        <span class="p-price">2,500,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-35.jpg -->
+    <div class="p-card fade-up" data-cat="모바일앱" data-id="35" data-name="독서 기록 앱 UI" data-desc="독서 SNS 앱 디자인. 책 검색, 독서 기록, 독후감, 팔로우 피드, 독서 통계 화면 전체." data-tags="독서,SNS,Figma,iOS" data-price="2,000,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-35.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=35">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">모바일앱 UI</p>
+        <p class="p-name">독서 기록 앱 UI</p>
+        <p class="p-meta">Figma · iOS · 2024</p>
+        <span class="p-price">2,000,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-36.jpg -->
+    <div class="p-card fade-up" data-cat="모바일앱" data-id="36" data-name="명상·마인드풀니스 앱" data-desc="명상 가이드 앱 UI/UX. 온보딩 흐름, 명상 세션, 감정 일기, 통계 리포트, 유료 구독 플로우." data-tags="명상,구독,Figma,iOS" data-price="2,300,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-36.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=36">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">모바일앱 UI</p>
+        <p class="p-name">명상·마인드풀니스 앱</p>
+        <p class="p-meta">Figma · iOS · 2023</p>
+        <span class="p-price">2,300,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-37.jpg -->
+    <div class="p-card fade-up" data-cat="모바일앱" data-id="37" data-name="여행 플래너 앱 UI" data-desc="여행 일정 관리 앱. 여행지 검색, 일정표, 지도 핀, 예산 계산기, 여행 앨범 화면 디자인." data-tags="여행,플래너,지도UI" data-price="2,500,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-37.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=37">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">모바일앱 UI</p>
+        <p class="p-name">여행 플래너 앱 UI</p>
+        <p class="p-meta">Figma · Android · 2024</p>
+        <span class="p-price">2,500,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-38.jpg -->
+    <div class="p-card fade-up" data-cat="모바일앱" data-id="38" data-name="중고거래 플랫폼 앱" data-desc="C2C 중고거래 앱 UI. 상품 등록, 채팅, 안전결제, 후기, 동네 기반 필터 화면 전체 Figma 납품." data-tags="중고거래,채팅,Figma" data-price="3,200,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-38.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=38">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">모바일앱 UI</p>
+        <p class="p-name">중고거래 플랫폼 앱</p>
+        <p class="p-meta">Figma · iOS/Android · 2023</p>
+        <span class="p-price">3,200,000원~</span>
+      </div>
+    </div>
+
+    <!-- ══ 상세페이지 7개 ══ -->
+    <!-- portfolio-39.jpg -->
+    <div class="p-card fade-up" data-cat="상세페이지" data-id="39" data-name="건강식품 스마트스토어 상세" data-desc="건강기능식품 스마트스토어 상세페이지. 성분 인포그래픽, 전·후 사진, 섭취법 도식화, 구매 후기 섹션." data-tags="스마트스토어,건강식품,Photoshop" data-price="150,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-39.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=39">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">상세페이지</p>
+        <p class="p-name">건강식품 스마트스토어 상세</p>
+        <p class="p-meta">Photoshop · 2024</p>
+        <span class="p-price">150,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-40.jpg -->
+    <div class="p-card fade-up" data-cat="상세페이지" data-id="40" data-name="뷰티 제품 상세페이지" data-desc="화장품 쿠팡·스마트스토어 상세. 피부 타입별 효과, 성분 안전성 강조, 모델 착용샷, 리뷰 하이라이트." data-tags="뷰티,쿠팡,Photoshop" data-price="150,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-40.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=40">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">상세페이지</p>
+        <p class="p-name">뷰티 제품 상세페이지</p>
+        <p class="p-meta">Photoshop · 2024</p>
+        <span class="p-price">150,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-41.jpg -->
+    <div class="p-card fade-up" data-cat="상세페이지" data-id="41" data-name="가전제품 상세페이지" data-desc="가전제품 주요 기능 비교, 사용 시나리오 연출, 스펙 테이블, 인증마크, A/S 안내 섹션." data-tags="가전,상세페이지,Photoshop" data-price="180,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-41.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=41">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">상세페이지</p>
+        <p class="p-name">가전제품 상세페이지</p>
+        <p class="p-meta">Photoshop · 2023</p>
+        <span class="p-price">180,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-42.jpg -->
+    <div class="p-card fade-up" data-cat="상세페이지" data-id="42" data-name="식품 쇼핑몰 상세페이지" data-desc="농산물 직거래 쇼핑몰 상세. 산지 스토리, 인증 강조, 조리법 섹션, 정기구독 혜택 안내." data-tags="식품,농산물,직거래" data-price="140,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-42.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=42">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">상세페이지</p>
+        <p class="p-name">식품 쇼핑몰 상세페이지</p>
+        <p class="p-meta">Photoshop · 2024</p>
+        <span class="p-price">140,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-43.jpg -->
+    <div class="p-card fade-up" data-cat="상세페이지" data-id="43" data-name="패션 의류 상세페이지" data-desc="온라인 패션 셀렉트샵 상세. 모델 착샷 다각도, 소재·핏 안내, 사이즈 가이드, 코디 추천 섹션." data-tags="패션,의류,스타일가이드" data-price="130,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-43.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=43">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">상세페이지</p>
+        <p class="p-name">패션 의류 상세페이지</p>
+        <p class="p-meta">Photoshop · 2024</p>
+        <span class="p-price">130,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-44.jpg -->
+    <div class="p-card fade-up" data-cat="상세페이지" data-id="44" data-name="생활용품 상세페이지" data-desc="친환경 생활용품 상세. 제품 성분 비교, 사용 동영상 썸네일, 지속가능성 메시지, 패키지 안내." data-tags="생활용품,친환경,Photoshop" data-price="130,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-44.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=44">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">상세페이지</p>
+        <p class="p-name">생활용품 상세페이지</p>
+        <p class="p-meta">Photoshop · 2023</p>
+        <span class="p-price">130,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-45.jpg -->
+    <div class="p-card fade-up" data-cat="상세페이지" data-id="45" data-name="반려동물 용품 상세" data-desc="펫 케어 용품 상세페이지. 수의사 추천 강조, 사용 방법 순서도, 반려동물 모델 착용샷, Q&A 섹션." data-tags="반려동물,펫케어,Photoshop" data-price="140,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-45.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=45">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">상세페이지</p>
+        <p class="p-name">반려동물 용품 상세</p>
+        <p class="p-meta">Photoshop · 2024</p>
+        <span class="p-price">140,000원~</span>
+      </div>
+    </div>
+
+    <!-- ══ 패키지·인쇄물 5개 ══ -->
+    <!-- portfolio-46.jpg -->
+    <div class="p-card fade-up" data-cat="패키지" data-id="46" data-name="프리미엄 식품 패키지" data-desc="전통 방식 건강식품 브랜드 패키지 디자인. 한지 느낌 텍스처, 도장 인장, 고급 박스·파우치 디자인." data-tags="패키지,식품,Illustrator,프리미엄" data-price="300,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-46.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=46">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">패키지·인쇄물</p>
+        <p class="p-name">프리미엄 식품 패키지</p>
+        <p class="p-meta">Illustrator · 2023</p>
+        <span class="p-price">300,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-47.jpg -->
+    <div class="p-card fade-up" data-cat="패키지" data-id="47" data-name="뷰티 제품 패키지" data-desc="스킨케어 브랜드 패키지 시스템 디자인. 용기 라벨, 박스, 쇼핑백, 보자기 포장 전체 세트." data-tags="뷰티,패키지,Illustrator" data-price="450,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-47.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=47">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">패키지·인쇄물</p>
+        <p class="p-name">뷰티 제품 패키지</p>
+        <p class="p-meta">Illustrator · Photoshop · 2024</p>
+        <span class="p-price">450,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-48.jpg -->
+    <div class="p-card fade-up" data-cat="패키지" data-id="48" data-name="레트로 과자 패키지" data-desc="복고 감성 스낵 브랜드 패키지. 70~80년대 레트로 일러스트, 포장지 디자인, 띠지 포함 전체 세트." data-tags="레트로,과자,Illustrator" data-price="280,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-48.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=48">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">패키지·인쇄물</p>
+        <p class="p-name">레트로 과자 패키지</p>
+        <p class="p-meta">Illustrator · 2023</p>
+        <span class="p-price">280,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-49.jpg -->
+    <div class="p-card fade-up" data-cat="패키지" data-id="49" data-name="기업 브로셔·카탈로그" data-desc="중견기업 제품 카탈로그 디자인. 커버·내지·뒷표지 24P. PDF·인쇄용 인디자인 파일 납품." data-tags="브로셔,카탈로그,InDesign" data-price="500,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-49.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=49">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">패키지·인쇄물</p>
+        <p class="p-name">기업 브로셔·카탈로그</p>
+        <p class="p-meta">InDesign · 24P · 2024</p>
+        <span class="p-price">500,000원~</span>
+      </div>
+    </div>
+
+    <!-- portfolio-50.jpg -->
+    <div class="p-card fade-up" data-cat="패키지" data-id="50" data-name="행사 현수막·배너" data-desc="기업 행사·팝업스토어 현수막, 롤업배너, X배너 세트. 인쇄 규격 맞춤 AI·PSD 원본 파일 납품." data-tags="현수막,배너,인쇄물" data-price="120,000원">
+      <div class="p-thumb">
+        <div class="p-placeholder"><span class="folder">🖼️</span>images/portfolio/portfolio-50.jpg</div>
+        <div class="p-overlay">
+          <a class="p-apply-btn" href="apply.html?style=50">이 스타일로 신청하기</a>
+          <a class="p-detail-btn" href="#" onclick="openModal(this);return false;">자세히 보기</a>
+        </div>
+      </div>
+      <div class="p-info">
+        <p class="p-cat">패키지·인쇄물</p>
+        <p class="p-name">행사 현수막·배너</p>
+        <p class="p-meta">Illustrator · 2024</p>
+        <span class="p-price">120,000원~</span>
+      </div>
+    </div>
+
+  </div><!-- /portfolio-grid -->
+</div>
+
+<!-- CTA BANNER -->
+<div class="cta-banner fade-up">
+  <h3>마음에 드는 스타일을 찾으셨나요?</h3>
+  <p>포트폴리오 항목의 <strong style="color:var(--gold)">「이 스타일로 신청하기」</strong> 버튼을 누르거나, 아래에서 무료 상담을 신청하세요.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="apply.html" class="btn-primary">무료 상담 신청하기</a>
+    <a href="index.html#pricing" class="btn-outline">가격 안내 보기</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom">
+    <a href="index.html" class="nav-logo" style="font-size:1.2rem;">KHYE<span style="color:var(--white);"> STUDIO</span></a>
+    <p>© 2018–2025 KHYE STUDIO. All rights reserved.</p>
+    <p><a href="index.html" style="color:var(--gray);text-decoration:none;">홈으로 돌아가기</a></p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-img" id="modalImg">📁 이미지를 넣어주세요</div>
+    <p class="modal-cat" id="modalCat"></p>
+    <h2 class="modal-title" id="modalTitle"></h2>
+    <p class="modal-desc" id="modalDesc"></p>
+    <div class="modal-tags" id="modalTags"></div>
+    <div class="modal-btns">
+      <a href="#" class="btn-primary" id="modalApplyBtn" style="flex:1;text-align:center;text-decoration:none;">이 스타일로 신청하기</a>
+      <a href="apply.html" class="btn-outline" style="flex:1;text-align:center;text-decoration:none;">일반 상담 신청</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
+
+  // Filter
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat=btn.dataset.cat;
+      let count=0;
+      document.querySelectorAll('.p-card').forEach(card=>{
+        if(cat==='all'||card.dataset.cat===cat){card.classList.remove('hidden');count++;}
+        else card.classList.add('hidden');
+      });
+      document.getElementById('countDisplay').textContent=count;
+    });
+  });
+
+  // Modal
+  function openModal(el){
+    const card=el.closest('.p-card');
+    const id=card.dataset.id;
+    document.getElementById('modalCat').textContent=card.dataset.cat;
+    document.getElementById('modalTitle').textContent=card.dataset.name;
+    document.getElementById('modalDesc').textContent=card.dataset.desc;
+    document.getElementById('modalImg').textContent='📁 images/portfolio/portfolio-'+id+'.jpg';
+    const tags=card.dataset.tags.split(',');
+    document.getElementById('modalTags').innerHTML=tags.map(t=>`<span class="tag">${t}</span>`).join('');
+    document.getElementById('modalApplyBtn').href='apply.html?style='+id+'&name='+encodeURIComponent(card.dataset.name);
+    document.getElementById('modalOverlay').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(e){
+    if(!e||e.target===document.getElementById('modalOverlay')||e.currentTarget.classList.contains('modal-close')){
+      document.getElementById('modalOverlay').classList.remove('open');
+      document.body.style.overflow='';
+    }
+  }
+
+  // Scroll animation
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

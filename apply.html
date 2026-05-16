@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>제작 신청 | KHYE STUDIO - 웹에이전시</title>
+  <meta name="description" content="KHYE STUDIO에 제작을 신청하세요. 무료 상담 후 24시간 내 견적서를 제공합니다. 기업홈페이지·쇼핑몰·앱·랜딩페이지·상세페이지 전문."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://khyestudio.com/apply.html"/>
+  <meta property="og:title" content="제작 신청 | KHYE STUDIO"/>
+  <meta property="og:description" content="무료 상담 신청. 24시간 내 맞춤 견적서 제공."/>
+  <meta property="og:image" content="images/og-image.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles/apply.css"/>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">KHYE<span> STUDIO</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">소개</a></li>
+    <li><a href="index.html#services">서비스</a></li>
+    <li><a href="portfolio.html">포트폴리오</a></li>
+    <li><a href="index.html#pricing">가격안내</a></li>
+    <li><a href="apply.html" class="nav-cta">무료 상담 신청</a></li>
+  </ul>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="index.html" data-close-nav>홈</a></li>
+    <li><a href="portfolio.html" data-close-nav>포트폴리오</a></li>
+    <li><a href="index.html#pricing" data-close-nav>가격안내</a></li>
+  </ul>
+</div>
+
+<div class="apply-wrap">
+  <!-- LEFT -->
+  <div class="apply-info fade-up">
+    <span class="section-tag">Contact</span>
+    <h1 class="apply-title">무료 상담<br/>신청하기</h1>
+    <p class="apply-desc">
+      양식을 작성해주시면 <strong class="text-white">24시간 내</strong>에 담당자가 연락드립니다.<br/>
+      처음이셔도 괜찮아요. 아이디어만 있어도 됩니다.
+    </p>
+    <div class="info-items">
+      <div class="info-item">
+        <div class="info-icon">⚡</div>
+        <div>
+          <h4>빠른 응답</h4>
+          <p>평일 기준 24시간 이내 맞춤 견적서를 보내드립니다.</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">💰</div>
+        <div>
+          <h4>무료 상담</h4>
+          <p>상담 및 견적은 완전 무료. 부담 없이 문의주세요.</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🔒</div>
+        <div>
+          <h4>비밀 유지</h4>
+          <p>제공하신 정보는 외부에 공개되지 않습니다.</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📅</div>
+        <div>
+          <h4>운영 시간</h4>
+          <p>평일 09:00 – 18:00 (주말·공휴일 이메일 응대)</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-methods">
+      <a href="tel:010-0000-0000" class="contact-btn"><span>📞</span>010-0000-0000 (전화)</a>
+      <a href="mailto:hello@khyestudio.com" class="contact-btn"><span>📧</span>hello@khyestudio.com</a>
+      <a href="#" class="contact-btn"><span>💬</span>카카오톡 채널 상담</a>
+    </div>
+  </div>
+
+  <!-- RIGHT FORM -->
+  <div class="apply-form-wrap fade-up">
+    <!-- Form Steps -->
+    <div class="form-steps" id="formSteps">
+      <div class="step active" id="step1-indicator"><div class="step-circle">1</div><div class="step-label">기본 정보</div></div>
+      <div class="step" id="step2-indicator"><div class="step-circle">2</div><div class="step-label">서비스 선택</div></div>
+      <div class="step" id="step3-indicator"><div class="step-circle">3</div><div class="step-label">상세 내용</div></div>
+    </div>
+
+    <div class="form-header">
+      <h3>제작 신청서</h3>
+      <p>*표시 항목은 필수 입력 사항입니다.</p>
+      <div id="styleBadgeWrap"></div>
+    </div>
+
+    <form id="applyForm" novalidate>
+
+      <!-- STEP 1: 기본정보 -->
+      <div id="formStep1">
+        <fieldset>
+          <legend>기본 정보</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label>담당자 이름 <span class="req">*</span></label>
+              <input type="text" name="name" placeholder="홍길동" required/>
+            </div>
+            <div class="form-group">
+              <label>연락처 <span class="req">*</span></label>
+              <input type="tel" name="phone" placeholder="010-0000-0000" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>이메일 <span class="req">*</span></label>
+            <input type="email" name="email" placeholder="example@company.com" required/>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>회사/브랜드명</label>
+              <input type="text" name="company" placeholder="KHYE 주식회사"/>
+            </div>
+            <div class="form-group">
+              <label>업종</label>
+              <select name="industry">
+                <option value="">업종 선택</option>
+                <option>뷰티·화장품</option>
+                <option>패션·의류</option>
+                <option>식품·음료</option>
+                <option>IT·소프트웨어</option>
+                <option>건설·인테리어</option>
+                <option>의료·헬스케어</option>
+                <option>교육·학원</option>
+                <option>부동산</option>
+                <option>제조·물류</option>
+                <option>서비스업</option>
+                <option>기타</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+        <div class="form-actions">
+          <button type="button" data-next-step="2" class="btn-primary">다음 단계 →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: 서비스 선택 -->
+      <div id="formStep2" class="hidden">
+        <fieldset>
+          <legend>원하시는 서비스 <span class="req">*</span></legend>
+          <div class="service-grid">
+            <div>
+              <input type="radio" name="service" id="svc1" value="기업 홈페이지" class="service-opt"/>
+              <label for="svc1"><span class="svc-icon">🏢</span>기업 홈페이지</label>
+            </div>
+            <div>
+              <input type="radio" name="service" id="svc2" value="쇼핑몰 제작" class="service-opt"/>
+              <label for="svc2"><span class="svc-icon">🛍️</span>쇼핑몰 제작</label>
+            </div>
+            <div>
+              <input type="radio" name="service" id="svc3" value="모바일 앱 UI" class="service-opt"/>
+              <label for="svc3"><span class="svc-icon">📱</span>모바일 앱 UI</label>
+            </div>
+            <div>
+              <input type="radio" name="service" id="svc4" value="랜딩페이지" class="service-opt"/>
+              <label for="svc4"><span class="svc-icon">📣</span>랜딩페이지</label>
+            </div>
+            <div>
+              <input type="radio" name="service" id="svc5" value="상세페이지" class="service-opt"/>
+              <label for="svc5"><span class="svc-icon">🎨</span>상세페이지</label>
+            </div>
+            <div>
+              <input type="radio" name="service" id="svc6" value="패키지·인쇄물" class="service-opt"/>
+              <label for="svc6"><span class="svc-icon">📦</span>패키지·인쇄물</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>예산 범위</legend>
+          <div class="budget-grid">
+            <div><input type="radio" name="budget" id="b1" value="50만원 미만" class="budget-opt"/><label for="b1">50만원 미만</label></div>
+            <div><input type="radio" name="budget" id="b2" value="50~100만원" class="budget-opt"/><label for="b2">50~100만원</label></div>
+            <div><input type="radio" name="budget" id="b3" value="100~200만원" class="budget-opt"/><label for="b3">100~200만원</label></div>
+            <div><input type="radio" name="budget" id="b4" value="200만원 이상" class="budget-opt"/><label for="b4">200만원 이상</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>희망 납기</legend>
+          <select name="deadline">
+            <option value="">납기 선택</option>
+            <option>1주일 이내 (긴급)</option>
+            <option>2~3주 이내</option>
+            <option>1개월 이내</option>
+            <option>1~2개월</option>
+            <option>일정 미정</option>
+          </select>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="button" data-prev-step="1" class="btn-secondary">← 이전</button>
+          <button type="button" data-next-step="3" class="btn-primary">다음 단계 →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: 상세 내용 -->
+      <div id="formStep3" class="hidden">
+        <fieldset>
+          <legend>프로젝트 상세</legend>
+          <div class="form-group">
+            <label>프로젝트 소개 <span class="req">*</span></label>
+            <textarea name="description" placeholder="어떤 사이트/앱을 만들고 싶으신가요? 브랜드 소개, 기능 요구사항, 참고 사이트 등을 자유롭게 적어주세요." required></textarea>
+          </div>
+          <div class="form-group">
+            <label>참고 사이트 URL (선택)</label>
+            <input type="text" name="reference" placeholder="https://참고하고싶은사이트.com"/>
+          </div>
+          <div class="form-group">
+            <label>현재 운영 중인 사이트 (있다면)</label>
+            <input type="text" name="current_site" placeholder="https://현재사이트.com"/>
+          </div>
+          <div class="form-group">
+            <label>추가 요청사항</label>
+            <textarea name="extra" class="textarea-large" placeholder="특별히 신경 써주셨으면 하는 부분, 추가 기능, 주의사항 등을 자유롭게 적어주세요."></textarea>
+          </div>
+          <div class="form-group">
+            <label>유입 경로</label>
+            <select name="channel">
+              <option value="">선택해주세요</option>
+              <option>구글 검색</option>
+              <option>네이버 검색</option>
+              <option>인스타그램</option>
+              <option>유튜브</option>
+              <option>지인 추천</option>
+              <option>블로그</option>
+              <option>포트폴리오 사이트 보고</option>
+              <option>기타</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <div class="form-footer">
+          <div class="agree-check">
+            <input type="checkbox" id="agree" required/>
+            <label for="agree">
+              <a href="#">개인정보처리방침</a> 및 <a href="#">이용약관</a>에 동의합니다. 수집된 정보는 상담 목적으로만 활용됩니다. <span class="req">*</span>
+            </label>
+          </div>
+          <div class="form-actions">
+            <button type="button" data-prev-step="2" class="btn-secondary">← 이전</button>
+            <button type="submit" class="btn-submit">🚀 신청서 제출하기</button>
+          </div>
+          <p class="form-note">📬 제출 후 24시간 내 이메일 또는 전화로 연락드립니다.</p>
+        </div>
+      </div>
+
+    </form>
+
+    <!-- SUCCESS -->
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">🎉</div>
+      <h3>신청이 완료되었습니다!</h3>
+      <p>입력하신 연락처로 <strong class="text-gold">24시간 이내</strong>에 담당자가 연락드립니다.<br/>빠른 답변을 원하시면 카카오톡 채널로 문의해주세요.</p>
+      <a href="portfolio.html" class="back-btn">포트폴리오 더 보기</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <h2 class="faq-title">자주 묻는 질문</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" data-faq-toggle>
+      계약 후 수정은 몇 번까지 가능한가요?
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a"><p>디자인 시안 단계에서 2회 무료 수정이 포함됩니다. 개발 완료 후 추가 수정은 별도 협의합니다. 납품 후 1년간 버그·오류 수정은 무상으로 처리합니다.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-faq-toggle>
+      선금은 얼마나 내야 하나요?
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a"><p>일반적으로 계약금 50% 선납, 잔금 50%는 납품 후 지불합니다. 규모에 따라 3회 분할도 가능합니다. 계약 전 충분히 협의합니다.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-faq-toggle>
+      도메인과 서버(호스팅)는 직접 준비해야 하나요?
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a"><p>직접 준비하셔도 되고, 저희가 대신 세팅해드릴 수도 있습니다. 도메인·호스팅 비용은 실비로 별도 청구됩니다. 추천 서비스도 안내해드립니다.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-faq-toggle>
+      완성 후 직접 수정할 수 있나요?
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a"><p>WordPress 기반 제작 시 관리자 페이지를 통해 텍스트·이미지를 직접 수정할 수 있습니다. 커스텀 개발의 경우 관리자 CMS를 추가 구축합니다.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-faq-toggle>
+      소규모 사업자나 개인도 의뢰할 수 있나요?
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a"><p>물론입니다. 개인 창업자, 프리랜서, 1인 브랜드 등 사업 규모에 상관없이 모든 분들과 함께합니다. 예산에 맞는 최선의 방법을 제안해드립니다.</p></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <a href="index.html" class="nav-logo">KHYE<span class="text-white"> STUDIO</span></a>
+    <p>© 2018–2025 KHYE STUDIO. All rights reserved.</p>
+    <p><a href="portfolio.html" class="footer-link">포트폴리오 보기</a></p>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
+
+  // URL params - style badge
+  const params=new URLSearchParams(window.location.search);
+  const styleName=params.get('name');
+  const styleId=params.get('style');
+  if(styleId){
+    const badge=document.getElementById('styleBadgeWrap');
+    badge.innerHTML=`<div class="style-badge">✨ 참고 스타일: No.${styleId}${styleName?' — '+decodeURIComponent(styleName):''}</div>`;
+    // Auto-select service based on style
+    const id=parseInt(styleId);
+    let svcId='svc1';
+    if(id<=10)svcId='svc2';
+    else if(id<=20)svcId='svc1';
+    else if(id<=30)svcId='svc4';
+    else if(id<=38)svcId='svc3';
+    else if(id<=45)svcId='svc5';
+    else svcId='svc6';
+    const el=document.getElementById(svcId);
+    if(el)el.checked=true;
+  }
+
+  // Multi-step form
+  let currentStep=1;
+  function nextStep(step){
+    document.getElementById('formStep'+currentStep).style.display='none';
+    document.getElementById('step'+currentStep+'-indicator').classList.remove('active');
+    document.getElementById('step'+currentStep+'-indicator').classList.add('done');
+    document.getElementById('formStep'+step).style.display='block';
+    document.getElementById('step'+step+'-indicator').classList.add('active');
+    document.getElementById('step'+step+'-indicator').classList.remove('done');
+    currentStep=step;
+    window.scrollTo({top:document.querySelector('.apply-form-wrap').offsetTop-100,behavior:'smooth'});
+  }
+
+  // Form submit
+  document.getElementById('applyForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!document.getElementById('agree').checked){alert('개인정보처리방침에 동의해주세요.');return;}
+    this.style.display='none';
+    document.getElementById('formSteps').style.display='none';
+    document.querySelector('.form-header').style.display='none';
+    document.getElementById('successMsg').style.display='block';
+  });
+
+</div>
+
+<script src="scripts/common.js"></script>
+<script src="scripts/apply.js"></script>
+</body>
+</html>

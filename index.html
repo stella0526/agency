@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KHYE STUDIO | 웹사이트·앱 전문 제작 에이전시</title>
+  <meta name="description" content="KHYE STUDIO는 2018년부터 기업·쇼핑몰·모바일앱 제작을 전문으로 하는 웹에이전시입니다. 투명한 가격, 빠른 납기, 검증된 포트폴리오로 고객의 비즈니스를 성장시킵니다."/>
+  <meta name="keywords" content="웹에이전시,홈페이지제작,쇼핑몰제작,앱개발,웹디자인,랜딩페이지,UI디자인,반응형웹,기업홈페이지"/>
+  <meta name="author" content="KHYE STUDIO"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://khyestudio.com/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="KHYE STUDIO | 웹사이트·앱 전문 제작 에이전시"/>
+  <meta property="og:description" content="2018년 설립. 300+ 프로젝트 완료. 기업홈페이지·쇼핑몰·모바일앱 전문 제작"/>
+  <meta property="og:image" content="images/og-image.jpg"/>
+  <meta property="og:url" content="https://khyestudio.com/"/>
+  <meta property="og:site_name" content="KHYE STUDIO"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="KHYE STUDIO | 웹에이전시"/>
+  <meta name="twitter:description" content="2018년 설립. 300+ 프로젝트 완료. 기업홈페이지·쇼핑몰·모바일앱 전문"/>
+  <meta name="twitter:image" content="images/og-image.jpg"/>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "KHYE STUDIO",
+    "description": "웹사이트, 쇼핑몰, 모바일앱 전문 제작 에이전시",
+    "url": "https://khyestudio.com",
+    "logo": "https://khyestudio.com/images/logo.png",
+    "foundingDate": "2018",
+    "areaServed": "KR",
+    "serviceType": ["웹사이트 제작", "쇼핑몰 개발", "모바일앱 UI", "UI/UX 디자인"],
+    "priceRange": "₩350,000 ~",
+    "sameAs": [
+      "https://blog.naver.com/khyestudio",
+      "https://www.instagram.com/khyestudio"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --bg: #07070E;
+      --bg2: #0F0F1A;
+      --card: #13131F;
+      --gold: #C9A96E;
+      --gold2: #E8C98A;
+      --white: #F0EDE8;
+      --gray: #8A8A9A;
+      --border: rgba(201,169,110,0.18);
+      --font-serif: 'Noto Serif KR', serif;
+      --font-sans: 'Nanum Gothic', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+      background: rgba(7,7,14,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: background .3s;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .nav-logo span { color: var(--white); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: .875rem;
+      letter-spacing: .04em;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--bg) !important;
+      padding: .45rem 1.2rem;
+      border-radius: 3px;
+      font-weight: 800;
+      font-size: .82rem !important;
+    }
+    .nav-cta:hover { background: var(--gold2) !important; color: var(--bg) !important; }
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); transition: .3s; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+      padding: 0 7%;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(135deg, #07070E 40%, #111128 100%);
+    }
+    .hero-bg-img {
+      position: absolute; inset: 0;
+      background: url('images/hero-bg.jpg') center/cover no-repeat;
+      opacity: .12;
+      z-index: 1;
+    }
+    .hero-grid-overlay {
+      position: absolute; inset: 0; z-index: 2;
+      background-image:
+        linear-gradient(rgba(201,169,110,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,169,110,.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content { position: relative; z-index: 3; max-width: 760px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      border: 1px solid var(--border);
+      padding: .4rem 1rem;
+      border-radius: 20px;
+      font-size: .78rem;
+      color: var(--gold);
+      letter-spacing: .08em;
+      margin-bottom: 1.8rem;
+      background: rgba(201,169,110,.06);
+    }
+    .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.3} }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 1.4rem;
+    }
+    .hero-title .accent { color: var(--gold); }
+    .hero-sub {
+      font-size: clamp(.95rem, 1.4vw, 1.15rem);
+      color: var(--gray);
+      max-width: 540px;
+      line-height: 1.85;
+      margin-bottom: 2.6rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--bg);
+      padding: .9rem 2rem;
+      border-radius: 3px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: .92rem;
+      letter-spacing: .04em;
+      transition: background .2s, transform .2s;
+      border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: .9rem 2rem;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: .92rem;
+      letter-spacing: .04em;
+      border: 1px solid var(--border);
+      transition: border-color .2s, color .2s;
+      cursor: pointer;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-stats {
+      position: absolute; z-index: 3;
+      bottom: 10%;
+      right: 7%;
+      display: flex; gap: 3rem;
+    }
+    .stat { text-align: right; }
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
+    .stat-label { font-size: .78rem; color: var(--gray); letter-spacing: .05em; }
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: .4rem;
+      color: var(--gray); font-size: .75rem; letter-spacing: .1em;
+      animation: scrollBounce 2s infinite;
+    }
+    .hero-scroll::after {
+      content: '';
+      width: 1px; height: 40px;
+      background: linear-gradient(transparent, var(--gold));
+    }
+    @keyframes scrollBounce { 0%,100%{opacity:.5;transform:translateX(-50%) translateY(0)} 50%{opacity:1;transform:translateX(-50%) translateY(6px)} }
+
+    /* ── SECTIONS ── */
+    section { padding: 7rem 7%; }
+    .section-tag {
+      font-size: .78rem;
+      color: var(--gold);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: .8rem;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      font-size: .98rem;
+      color: var(--gray);
+      max-width: 560px;
+      line-height: 1.85;
+    }
+    .divider {
+      width: 48px; height: 2px;
+      background: var(--gold);
+      margin: 1.4rem 0 2.4rem;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg2); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    .about-img {
+      position: relative;
+    }
+    .about-img img {
+      width: 100%; border-radius: 4px;
+      filter: brightness(.9);
+    }
+    .about-img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gray); font-size: .85rem;
+    }
+    .about-img-badge {
+      position: absolute;
+      bottom: -1.5rem; right: -1.5rem;
+      background: var(--gold);
+      color: var(--bg);
+      padding: 1.2rem 1.8rem;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .about-img-badge strong { display: block; font-size: 2rem; font-weight: 800; font-family: var(--font-serif); line-height: 1; }
+    .about-img-badge span { font-size: .78rem; font-weight: 700; letter-spacing: .05em; }
+    .about-items { display: flex; flex-direction: column; gap: 1.6rem; margin-top: 2rem; }
+    .about-item {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      padding: 1.4rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: border-color .3s;
+    }
+    .about-item:hover { border-color: var(--gold); }
+    .about-icon {
+      width: 44px; height: 44px; min-width: 44px;
+      background: rgba(201,169,110,.1);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .about-item h4 { color: var(--white); font-size: .95rem; margin-bottom: .2rem; }
+    .about-item p { color: var(--gray); font-size: .85rem; line-height: 1.6; }
+
+    /* ── SERVICES ── */
+    #services { background: var(--bg); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2.4rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform .3s, border-color .3s;
+    }
+    .service-card:hover { transform: translateY(-6px); border-color: var(--gold); }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0; transition: opacity .3s;
+    }
+    .service-card:hover::before { opacity: 1; }
+    .service-num {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      color: rgba(201,169,110,.08);
+      font-weight: 700;
+      position: absolute; top: 1rem; right: 1.5rem;
+      line-height: 1;
+    }
+    .service-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+    .service-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: .7rem;
+    }
+    .service-card p { color: var(--gray); font-size: .87rem; line-height: 1.75; }
+    .service-price {
+      margin-top: 1.2rem;
+      display: inline-block;
+      font-size: .82rem;
+      color: var(--gold);
+      border: 1px solid rgba(201,169,110,.3);
+      padding: .3rem .8rem;
+      border-radius: 2px;
+    }
+
+    /* ── PORTFOLIO PREVIEW ── */
+    #portfolio-preview { background: var(--bg2); }
+    .portfolio-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 3rem;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .portfolio-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform .3s, border-color .3s;
+      position: relative;
+    }
+    .portfolio-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .portfolio-thumb {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, #1A1A2E, #16213E);
+      position: relative;
+      overflow: hidden;
+    }
+    .portfolio-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+    .portfolio-card:hover .portfolio-thumb img { transform: scale(1.04); }
+    .portfolio-thumb-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gray); font-size: .8rem; letter-spacing: .05em;
+    }
+    .portfolio-overlay {
+      position: absolute; inset: 0;
+      background: rgba(7,7,14,.75);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity .3s;
+    }
+    .portfolio-card:hover .portfolio-overlay { opacity: 1; }
+    .portfolio-overlay a {
+      background: var(--gold);
+      color: var(--bg);
+      padding: .6rem 1.4rem;
+      border-radius: 3px;
+      font-size: .82rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .portfolio-info { padding: 1.2rem 1.4rem; }
+    .portfolio-cat {
+      font-size: .74rem;
+      color: var(--gold);
+      letter-spacing: .08em;
+      margin-bottom: .3rem;
+    }
+    .portfolio-info h4 {
+      color: var(--white);
+      font-size: .97rem;
+      font-weight: 700;
+      margin-bottom: .2rem;
+    }
+    .portfolio-info p { color: var(--gray); font-size: .82rem; }
+
+    /* ── PRICING ── */
+    #pricing { background: var(--bg); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .pricing-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2.4rem 1.8rem;
+      display: flex; flex-direction: column;
+      transition: transform .3s, border-color .3s;
+      position: relative;
+    }
+    .pricing-card.featured {
+      border-color: var(--gold);
+      background: linear-gradient(145deg, #1A1628, #13131F);
+    }
+    .pricing-card.featured::before {
+      content: '인기';
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--bg);
+      font-size: .72rem; font-weight: 800;
+      padding: .2rem .9rem;
+      border-radius: 10px;
+    }
+    .pricing-card:hover { transform: translateY(-4px); }
+    .pricing-tier {
+      font-size: .78rem;
+      color: var(--gold);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .6rem;
+    }
+    .pricing-name {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .pricing-price {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .pricing-price sub { font-size: 1rem; color: var(--gray); font-weight: 400; }
+    .pricing-price sup { font-size: 1rem; }
+    .pricing-desc {
+      color: var(--gray);
+      font-size: .82rem;
+      margin: .8rem 0 1.4rem;
+      line-height: 1.6;
+    }
+    .pricing-list {
+      list-style: none;
+      flex: 1;
+      margin-bottom: 1.8rem;
+    }
+    .pricing-list li {
+      font-size: .84rem;
+      color: var(--gray);
+      padding: .45rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.04);
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .pricing-list li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 800;
+      font-size: .8rem;
+      min-width: 14px;
+    }
+    .pricing-list li.no { color: rgba(138,138,154,.4); }
+    .pricing-list li.no::before { content: '–'; color: rgba(138,138,154,.3); }
+
+    /* ── PROCESS ── */
+    #process { background: var(--bg2); }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-top: 3.5rem;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px; left: 10%; right: 10%;
+      height: 1px;
+      background: var(--border);
+      z-index: 0;
+    }
+    .process-step {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+      position: relative; z-index: 1;
+    }
+    .step-num {
+      width: 72px; height: 72px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--card);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .process-step h4 {
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: .4rem;
+    }
+    .process-step p { font-size: .8rem; color: var(--gray); line-height: 1.55; }
+
+    /* ── REVIEWS ── */
+    #reviews { background: var(--bg); }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .review-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2rem;
+    }
+    .review-stars { color: var(--gold); font-size: .95rem; margin-bottom: .8rem; }
+    .review-text { color: var(--gray); font-size: .88rem; line-height: 1.75; margin-bottom: 1.4rem; }
+    .review-author { display: flex; align-items: center; gap: .8rem; }
+    .review-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #8B6914);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: .9rem; color: var(--bg);
+    }
+    .review-name { font-size: .88rem; font-weight: 700; color: var(--white); }
+    .review-company { font-size: .78rem; color: var(--gray); }
+
+    /* ── CTA ── */
+    #cta {
+      background: linear-gradient(135deg, #0F0D1E, #1A1628);
+      text-align: center;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    #cta .section-title { max-width: 600px; margin: 0 auto 1rem; }
+    #cta .section-desc { margin: 0 auto 2.5rem; text-align: center; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #050508;
+      padding: 4rem 7% 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand p { color: var(--gray); font-size: .85rem; line-height: 1.75; margin-top: .8rem; }
+    .footer-col h5 {
+      color: var(--white);
+      font-size: .82rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: .6rem; }
+    .footer-col a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: .84rem;
+      transition: color .2s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding-top: 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: .8rem;
+    }
+    .footer-bottom p { color: rgba(138,138,154,.5); font-size: .78rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-steps { grid-template-columns: repeat(3, 1fr); row-gap: 2rem; }
+      .process-steps::before { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 5%; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 5rem 5%; }
+      .hero-stats { position: static; margin-top: 3rem; gap: 2rem; }
+      .hero-stats { justify-content: flex-start; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img-badge { bottom: -.8rem; right: -.8rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-scroll { display: none; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-delay-1 { transition-delay: .1s; }
+    .fade-up-delay-2 { transition-delay: .2s; }
+    .fade-up-delay-3 { transition-delay: .3s; }
+
+    /* ── MOBILE NAV ── */
+    .mobile-nav {
+      display: none;
+      position: fixed; top: 68px; left: 0; right: 0;
+      background: rgba(7,7,14,.97);
+      padding: 1.5rem 5%;
+      z-index: 999;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav ul { list-style: none; }
+    .mobile-nav li { padding: .8rem 0; border-bottom: 1px solid rgba(255,255,255,.05); }
+    .mobile-nav a { color: var(--white); text-decoration: none; font-size: 1rem; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">KHYE<span> STUDIO</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">소개</a></li>
+    <li><a href="#services">서비스</a></li>
+    <li><a href="portfolio.html">포트폴리오</a></li>
+    <li><a href="#pricing">가격안내</a></li>
+    <li><a href="#reviews">후기</a></li>
+    <li><a href="apply.html" class="nav-cta">무료 상담 신청</a></li>
+  </ul>
+  <div class="hamburger" id="ham" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="#about" onclick="toggleMenu()">소개</a></li>
+    <li><a href="#services" onclick="toggleMenu()">서비스</a></li>
+    <li><a href="portfolio.html">포트폴리오</a></li>
+    <li><a href="#pricing" onclick="toggleMenu()">가격안내</a></li>
+    <li><a href="#reviews" onclick="toggleMenu()">후기</a></li>
+    <li><a href="apply.html">무료 상담 신청</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-img"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">2018년 설립 · 검증된 웹에이전시</div>
+    <h1 class="hero-title">
+      브랜드를 빛내는<br/>
+      <span class="accent">디지털 경험</span>을<br/>
+      만들어드립니다
+    </h1>
+    <p class="hero-sub">
+      기업 홈페이지, 쇼핑몰, 모바일앱까지 — KHYE STUDIO는<br/>
+      7년간 300개 이상의 프로젝트를 완성한 전문 웹에이전시입니다.<br/>
+      투명한 가격, 빠른 납기, 완벽한 사후관리를 약속합니다.
+    </p>
+    <div class="hero-btns">
+      <a href="portfolio.html" class="btn-primary">포트폴리오 보기</a>
+      <a href="apply.html" class="btn-outline">무료 상담 신청 →</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">300+</span>
+      <span class="stat-label">완료 프로젝트</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">98%</span>
+      <span class="stat-label">고객 만족도</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">7년</span>
+      <span class="stat-label">운영 경력</span>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img fade-up">
+      <!-- 이미지 경로: images/about-team.jpg -->
+      <div class="about-img-placeholder">
+        📁 images/about-team.jpg
+      </div>
+      <div class="about-img-badge">
+        <strong>7+</strong>
+        <span>YEARS</span>
+      </div>
+    </div>
+    <div class="fade-up fade-up-delay-1">
+      <span class="section-tag">About Us</span>
+      <h2 class="section-title">고객의 성공이<br/>저희의 성과입니다</h2>
+      <div class="divider"></div>
+      <p class="section-desc">
+        KHYE STUDIO는 2018년 설립 이후 스타트업부터 중견기업까지
+        다양한 규모의 클라이언트와 함께해왔습니다. 단순한 제작을 넘어
+        비즈니스 목표를 이해하고, 그에 맞는 최적의 디지털 솔루션을 제공합니다.
+      </p>
+      <div class="about-items">
+        <div class="about-item fade-up fade-up-delay-1">
+          <div class="about-icon">🎯</div>
+          <div>
+            <h4>목표 중심 설계</h4>
+            <p>전환율, 체류시간, 브랜드 인지도 등 비즈니스 KPI를 기준으로 제작합니다.</p>
+          </div>
+        </div>
+        <div class="about-item fade-up fade-up-delay-2">
+          <div class="about-icon">⚡</div>
+          <div>
+            <h4>빠른 납기 보장</h4>
+            <p>랜딩페이지 3일, 기업사이트 2주, 쇼핑몰 3주 — 약속한 일정을 반드시 지킵니다.</p>
+          </div>
+        </div>
+        <div class="about-item fade-up fade-up-delay-3">
+          <div class="about-icon">🛡️</div>
+          <div>
+            <h4>1년 무상 AS 보장</h4>
+            <p>납품 후 1년간 오류 수정, 소규모 수정 작업을 무상으로 지원합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div style="text-align:center; max-width:600px; margin:0 auto;">
+    <span class="section-tag fade-up">Services</span>
+    <h2 class="section-title fade-up">전문 제작 서비스</h2>
+    <div class="divider fade-up" style="margin:1.4rem auto 0;"></div>
+  </div>
+  <div class="services-grid" style="margin-top:3rem;">
+    <div class="service-card fade-up">
+      <div class="service-num">01</div>
+      <div class="service-icon">🏢</div>
+      <h3>기업 홈페이지</h3>
+      <p>브랜드 아이덴티티를 반영한 반응형 기업 웹사이트. SEO 최적화 기본 포함.</p>
+      <span class="service-price">850,000원 ~</span>
+    </div>
+    <div class="service-card fade-up fade-up-delay-1">
+      <div class="service-num">02</div>
+      <div class="service-icon">🛍️</div>
+      <h3>쇼핑몰 제작</h3>
+      <p>결제 시스템, 상품관리, 주문관리까지 완비된 맞춤형 쇼핑몰.</p>
+      <span class="service-price">1,500,000원 ~</span>
+    </div>
+    <div class="service-card fade-up fade-up-delay-2">
+      <div class="service-num">03</div>
+      <div class="service-icon">📱</div>
+      <h3>모바일 앱 UI</h3>
+      <p>iOS/Android 앱 UI/UX 기획·디자인. 개발사 연계 서비스 제공.</p>
+      <span class="service-price">2,000,000원 ~</span>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-num">04</div>
+      <div class="service-icon">📣</div>
+      <h3>랜딩페이지</h3>
+      <p>광고 전환율 극대화를 위한 고퀄리티 마케팅 랜딩페이지.</p>
+      <span class="service-price">350,000원 ~</span>
+    </div>
+    <div class="service-card fade-up fade-up-delay-1">
+      <div class="service-num">05</div>
+      <div class="service-icon">🎨</div>
+      <h3>상세페이지 디자인</h3>
+      <p>스마트스토어, 쿠팡, 자사몰용 구매 전환 최적화 상세페이지.</p>
+      <span class="service-price">120,000원 ~</span>
+    </div>
+    <div class="service-card fade-up fade-up-delay-2">
+      <div class="service-num">06</div>
+      <div class="service-icon">📦</div>
+      <h3>패키지·인쇄물</h3>
+      <p>제품 패키지, 브로셔, 명함, 배너 등 브랜드 인쇄물 디자인.</p>
+      <span class="service-price">120,000원 ~</span>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO PREVIEW -->
+<section id="portfolio-preview">
+  <div class="portfolio-header">
+    <div>
+      <span class="section-tag fade-up">Portfolio</span>
+      <h2 class="section-title fade-up">최근 작업물</h2>
+    </div>
+    <a href="portfolio.html" class="btn-outline fade-up">전체 보기 →</a>
+  </div>
+  <div class="portfolio-grid">
+    <!-- 썸네일: images/portfolio/portfolio-01.jpg -->
+    <div class="portfolio-card fade-up">
+      <div class="portfolio-thumb">
+        <div class="portfolio-thumb-placeholder">📁 images/portfolio/portfolio-01.jpg</div>
+        <div class="portfolio-overlay">
+          <a href="apply.html?style=01">이 스타일로 신청하기</a>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <p class="portfolio-cat">쇼핑몰</p>
+        <h4>뷰티 브랜드 자사몰</h4>
+        <p>반응형 · Cafe24 · 2024</p>
+      </div>
+    </div>
+    <!-- 썸네일: images/portfolio/portfolio-02.jpg -->
+    <div class="portfolio-card fade-up fade-up-delay-1">
+      <div class="portfolio-thumb">
+        <div class="portfolio-thumb-placeholder">📁 images/portfolio/portfolio-02.jpg</div>
+        <div class="portfolio-overlay">
+          <a href="apply.html?style=02">이 스타일로 신청하기</a>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <p class="portfolio-cat">기업 홈페이지</p>
+        <h4>IT 솔루션 기업 사이트</h4>
+        <p>반응형 · WordPress · 2024</p>
+      </div>
+    </div>
+    <!-- 썸네일: images/portfolio/portfolio-03.jpg -->
+    <div class="portfolio-card fade-up fade-up-delay-2">
+      <div class="portfolio-thumb">
+        <div class="portfolio-thumb-placeholder">📁 images/portfolio/portfolio-03.jpg</div>
+        <div class="portfolio-overlay">
+          <a href="apply.html?style=03">이 스타일로 신청하기</a>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <p class="portfolio-cat">랜딩페이지</p>
+        <h4>피트니스 서비스 랜딩</h4>
+        <p>반응형 · HTML/CSS · 2024</p>
+      </div>
+    </div>
+    <!-- 썸네일: images/portfolio/portfolio-04.jpg -->
+    <div class="portfolio-card fade-up">
+      <div class="portfolio-thumb">
+        <div class="portfolio-thumb-placeholder">📁 images/portfolio/portfolio-04.jpg</div>
+        <div class="portfolio-overlay">
+          <a href="apply.html?style=04">이 스타일로 신청하기</a>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <p class="portfolio-cat">모바일 앱 UI</p>
+        <h4>음식 배달 앱 UI/UX</h4>
+        <p>Figma · iOS/Android · 2023</p>
+      </div>
+    </div>
+    <!-- 썸네일: images/portfolio/portfolio-05.jpg -->
+    <div class="portfolio-card fade-up fade-up-delay-1">
+      <div class="portfolio-thumb">
+        <div class="portfolio-thumb-placeholder">📁 images/portfolio/portfolio-05.jpg</div>
+        <div class="portfolio-overlay">
+          <a href="apply.html?style=05">이 스타일로 신청하기</a>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <p class="portfolio-cat">상세페이지</p>
+        <h4>건강식품 스마트스토어</h4>
+        <p>Photoshop · 2024</p>
+      </div>
+    </div>
+    <!-- 썸네일: images/portfolio/portfolio-06.jpg -->
+    <div class="portfolio-card fade-up fade-up-delay-2">
+      <div class="portfolio-thumb">
+        <div class="portfolio-thumb-placeholder">📁 images/portfolio/portfolio-06.jpg</div>
+        <div class="portfolio-overlay">
+          <a href="apply.html?style=06">이 스타일로 신청하기</a>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <p class="portfolio-cat">패키지 디자인</p>
+        <h4>프리미엄 식품 패키지</h4>
+        <p>Illustrator · 2023</p>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:3rem;">
+    <a href="portfolio.html" class="btn-primary">포트폴리오 전체 보기 (50개+)</a>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div style="text-align:center; max-width:640px; margin:0 auto;">
+    <span class="section-tag fade-up">Pricing</span>
+    <h2 class="section-title fade-up">투명한 가격 정책</h2>
+    <p class="section-desc fade-up" style="margin:0 auto;">숨겨진 비용 없이 처음부터 명확한 견적을 제공합니다.<br/>모든 상품에는 기본 1년 AS가 포함됩니다.</p>
+  </div>
+  <div class="pricing-grid">
+
+    <div class="pricing-card fade-up">
+      <p class="pricing-tier">Basic</p>
+      <h3 class="pricing-name">랜딩페이지</h3>
+      <div class="pricing-price"><sup>₩</sup>350,000</div>
+      <p class="pricing-desc">단일 제품·서비스 홍보용<br/>마케팅 최적화 페이지</p>
+      <ul class="pricing-list">
+        <li>단일 페이지 (Scroll형)</li>
+        <li>반응형 (PC·모바일)</li>
+        <li>CTA 버튼 설계</li>
+        <li>기본 SEO 설정</li>
+        <li>납기 3~5일</li>
+        <li class="no">DB 연동</li>
+        <li class="no">관리자 페이지</li>
+      </ul>
+      <a href="apply.html" class="btn-outline" style="text-align:center;display:block;">상담 신청</a>
+    </div>
+
+    <div class="pricing-card fade-up fade-up-delay-1">
+      <p class="pricing-tier">Standard</p>
+      <h3 class="pricing-name">기업 홈페이지</h3>
+      <div class="pricing-price"><sup>₩</sup>850,000</div>
+      <p class="pricing-desc">5페이지 구성<br/>브랜드 홈페이지 기본형</p>
+      <ul class="pricing-list">
+        <li>5페이지 구성</li>
+        <li>반응형 (PC·모바일)</li>
+        <li>SEO 최적화</li>
+        <li>관리자 게시판</li>
+        <li>Google Analytics 연동</li>
+        <li>납기 2주</li>
+        <li class="no">쇼핑 기능</li>
+      </ul>
+      <a href="apply.html" class="btn-outline" style="text-align:center;display:block;">상담 신청</a>
+    </div>
+
+    <div class="pricing-card featured fade-up fade-up-delay-2">
+      <p class="pricing-tier">Popular</p>
+      <h3 class="pricing-name">쇼핑몰 기본</h3>
+      <div class="pricing-price"><sup>₩</sup>1,500,000</div>
+      <p class="pricing-desc">자사몰 완전 구축<br/>결제·상품관리 포함</p>
+      <ul class="pricing-list">
+        <li>맞춤형 쇼핑몰 디자인</li>
+        <li>결제 시스템 연동</li>
+        <li>상품·주문·회원 관리</li>
+        <li>반응형 + SEO</li>
+        <li>SNS 로그인 연동</li>
+        <li>납기 3주</li>
+        <li>1년 무상 AS</li>
+      </ul>
+      <a href="apply.html" class="btn-primary" style="text-align:center;display:block;">상담 신청</a>
+    </div>
+
+    <div class="pricing-card fade-up fade-up-delay-3">
+      <p class="pricing-tier">Premium</p>
+      <h3 class="pricing-name">쇼핑몰 고급</h3>
+      <div class="pricing-price"><sup>₩</sup>3,000,000</div>
+      <p class="pricing-desc">프리미엄 커스텀 개발<br/>고도화 기능 포함</p>
+      <ul class="pricing-list">
+        <li>완전 커스텀 개발</li>
+        <li>PG사 직접 계약 연동</li>
+        <li>ERP·재고 연동</li>
+        <li>마케팅 자동화</li>
+        <li>속도 최적화</li>
+        <li>납기 협의</li>
+        <li>2년 무상 AS</li>
+      </ul>
+      <a href="apply.html" class="btn-outline" style="text-align:center;display:block;">상담 신청</a>
+    </div>
+
+  </div>
+  <p style="text-align:center; color:var(--gray); font-size:.82rem; margin-top:1.5rem;">
+    ※ 모바일앱 UI 2,000,000원~ / 상세페이지 120,000원~ / 패키지디자인 120,000원~ 별도 문의
+  </p>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div style="text-align:center; max-width:600px; margin:0 auto;">
+    <span class="section-tag fade-up">Process</span>
+    <h2 class="section-title fade-up">제작 프로세스</h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step fade-up">
+      <div class="step-num">01</div>
+      <h4>상담 & 기획</h4>
+      <p>목표·예산·일정 확인<br/>맞춤 제안서 제공</p>
+    </div>
+    <div class="process-step fade-up fade-up-delay-1">
+      <div class="step-num">02</div>
+      <h4>디자인 시안</h4>
+      <p>2회 무료 수정<br/>확정 후 개발 착수</p>
+    </div>
+    <div class="process-step fade-up fade-up-delay-2">
+      <div class="step-num">03</div>
+      <h4>개발 & 구현</h4>
+      <p>반응형 코딩<br/>기능 개발</p>
+    </div>
+    <div class="process-step fade-up fade-up-delay-3">
+      <div class="step-num">04</div>
+      <h4>테스트 & 검수</h4>
+      <p>크로스브라우저<br/>모바일 QA</p>
+    </div>
+    <div class="process-step fade-up">
+      <div class="step-num">05</div>
+      <h4>납품 & AS</h4>
+      <p>서버 배포<br/>1년 무상 지원</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div style="text-align:center; max-width:600px; margin:0 auto;">
+    <span class="section-tag fade-up">Reviews</span>
+    <h2 class="section-title fade-up">고객 후기</h2>
+    <p class="section-desc fade-up" style="margin:0 auto 3rem;">실제 고객들의 솔직한 이야기입니다.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card fade-up">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">상세페이지 의뢰했는데 기대 이상이었습니다. 납기도 정확했고 수정 요청도 빠르게 반영해주셔서 정말 만족합니다. 다음에도 꼭 맡기고 싶어요.</p>
+      <div class="review-author">
+        <div class="review-avatar">김</div>
+        <div>
+          <p class="review-name">김○○ 대표</p>
+          <p class="review-company">건강식품 브랜드 · 스마트스토어</p>
+        </div>
+      </div>
+    </div>
+    <div class="review-card fade-up fade-up-delay-1">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">회사 홈페이지를 새로 만들었는데 직원들도 고객들도 반응이 너무 좋아요. 원하는 방향으로 세심하게 반영해주셔서 감사합니다.</p>
+      <div class="review-author">
+        <div class="review-avatar">이</div>
+        <div>
+          <p class="review-name">이○○ 이사</p>
+          <p class="review-company">IT 솔루션 기업</p>
+        </div>
+      </div>
+    </div>
+    <div class="review-card fade-up fade-up-delay-2">
+      <div class="review-stars">★★★★☆</div>
+      <p class="review-text">쇼핑몰 오픈하면서 많이 걱정했는데 처음부터 끝까지 친절하게 안내해주셨어요. 오픈 후 매출도 기대 이상입니다!</p>
+      <div class="review-author">
+        <div class="review-avatar">박</div>
+        <div>
+          <p class="review-name">박○○ 대표</p>
+          <p class="review-company">패션 쇼핑몰 창업</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <span class="section-tag" style="display:block;text-align:center;">Get Started</span>
+  <h2 class="section-title fade-up">지금 바로 시작하세요</h2>
+  <p class="section-desc fade-up">무료 상담 후 맞춤 견적을 받아보세요.<br/>부담 없이 문의주시면 24시간 내 답변드립니다.</p>
+  <div class="cta-btns fade-up">
+    <a href="apply.html" class="btn-primary">무료 상담 신청하기</a>
+    <a href="portfolio.html" class="btn-outline">포트폴리오 보기</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="font-size:1.4rem;">KHYE<span style="color:var(--white);"> STUDIO</span></a>
+      <p style="margin-top:1rem;">웹사이트·앱 전문 제작 에이전시<br/>2018년 설립 · 300+ 프로젝트 완료<br/>기업홈페이지 · 쇼핑몰 · 모바일앱 · 랜딩페이지</p>
+      <p style="margin-top:.8rem; font-size:.8rem; color:rgba(138,138,154,.5);">사업자등록번호: 000-00-00000 | 통신판매업신고: 0000-서울-0000</p>
+    </div>
+    <div class="footer-col">
+      <h5>서비스</h5>
+      <ul>
+        <li><a href="apply.html">기업 홈페이지</a></li>
+        <li><a href="apply.html">쇼핑몰 제작</a></li>
+        <li><a href="apply.html">모바일 앱 UI</a></li>
+        <li><a href="apply.html">랜딩페이지</a></li>
+        <li><a href="apply.html">상세페이지</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>회사</h5>
+      <ul>
+        <li><a href="#about">소개</a></li>
+        <li><a href="portfolio.html">포트폴리오</a></li>
+        <li><a href="#pricing">가격안내</a></li>
+        <li><a href="#reviews">고객후기</a></li>
+        <li><a href="apply.html">문의하기</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>연락처</h5>
+      <ul>
+        <li><a href="mailto:hello@khyestudio.com">hello@khyestudio.com</a></li>
+        <li><a href="tel:010-0000-0000">010-0000-0000</a></li>
+        <li><a href="#">카카오톡 채널</a></li>
+        <li><a href="#">인스타그램</a></li>
+        <li><a href="#">네이버 블로그</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2018–2025 KHYE STUDIO. All rights reserved.</p>
+    <p>개인정보처리방침 | 이용약관</p>
+  </div>
+</footer>
+
+<script>
+  // Hamburger
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('mainNav');
+    nav.style.background = window.scrollY > 60
+      ? 'rgba(7,7,14,0.98)' : 'rgba(7,7,14,0.92)';
+  });
+
+  // Counter animation
+  function animateCounter(el, target, suffix='') {
+    let current = 0;
+    const step = target / 60;
+    const timer = setInterval(() => {
+      current += step;
+      if(current >= target) { current = target; clearInterval(timer); }
+      el.textContent = Math.floor(current) + suffix;
+    }, 25);
+  }
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting) {
+        const nums = e.target.querySelectorAll('.stat-num');
+        nums[0] && animateCounter(nums[0], 300, '+');
+        nums[1] && animateCounter(nums[1], 98, '%');
+        statsObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  const heroStats = document.querySelector('.hero-stats');
+  if(heroStats) statsObserver.observe(heroStats);
+</script>
+</body>
+</html>
